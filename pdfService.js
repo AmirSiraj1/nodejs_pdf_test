@@ -13,6 +13,10 @@ function buldPdf() {
     width: fullWidth,
   });
   pdf.fontSize(10).fillColor("#000").text("Name", 10, 100);
+  pdf.image(fs.readFileSync(`${__dirname}/assets/footer.jpg`), 0, 200, {
+    height: 570,
+    width: fullWidth + 70,
+  });
 
   pdf.end();
 }

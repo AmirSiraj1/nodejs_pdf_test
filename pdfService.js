@@ -2,7 +2,7 @@ const PDFDocument = require("pdfkit");
 const fs = require("fs");
 
 function buldPdf() {
-  const pdf = new PDFDocument({ size: "A4" });
+  const pdf = new PDFDocument({ size: "A4", margin: 0 });
 
   pdf.pipe(fs.createWriteStream(`output1.pdf`));
   const fullWidth = 533.28;
@@ -183,15 +183,16 @@ function buldPdf() {
     .stroke();
   //****************************************IMAGE************************************** */
   pdf.image(fs.readFileSync(`${__dirname}/assets/footer.jpg`), 0, 195, {
-    height: 547,
+    height: 550,
     width: fullWidth + 70,
   });
+  //*********************************************************************************** */
   pdf
     .fontSize(7)
     .text(
       "THIS IS A SYSTEM GENERATED REPORT AND DOES NOT REQUIRE PHYSICAL SIGNATURE",
       150,
-      744,
+      749,
       {
         width: 400,
       }
@@ -199,13 +200,13 @@ function buldPdf() {
   pdf
     .font("Helvetica-Bold")
     .fontSize(8)
-    .text("Printed By:     Automatic Printing", 15, 754, {
+    .text("Printed By:     Automatic Printing", 15, 759, {
       width: 180,
     });
   pdf
     .font("Helvetica-Bold")
     .fontSize(8)
-    .text("Printed Date:     Automatic Printing", 400, 754, {
+    .text("Printed Date:     Automatic Printing", 400, 759, {
       width: 150,
     });
   pdf
@@ -214,7 +215,7 @@ function buldPdf() {
     .text(
       "Al Quoz,Industrial Area 4 - P.O Box 26148,Dubai,UAE - Tel: +971 55 538 7248-Fax: +971 4 386 9998-Email: customercaredxb@menalabs.com",
       20,
-      762,
+      fullHeight - 20,
       {
         width: fullWidth,
       }

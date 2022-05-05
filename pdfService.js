@@ -1,14 +1,48 @@
 const PDFDocument = require("pdfkit");
 const fs = require("fs");
 
-function buldPdf() {
-  const pdf = new PDFDocument({ size: "A4", margin: 10 });
+const pdf = new PDFDocument({ size: "A4", margin: 10 });
+const fullWidth = 595.28;
+const fullHeight = 841.89;
+const nameAxis = 76;
+const textYaxis = 335;
 
+function squer(a, b, c, d) {
+  pdf
+    .moveTo(a, textYaxis + c)
+    .lineTo(b, textYaxis + c)
+    .strokeColor("#000")
+    .lineWidth(0.5)
+    .stroke();
+  pdf
+    .moveTo(a, textYaxis + c)
+    .lineTo(a, textYaxis + d)
+    .strokeColor("#000")
+    .lineWidth(0.5)
+    .stroke();
+  pdf
+    .moveTo(b, textYaxis + c)
+    .lineTo(b, textYaxis + d)
+    .strokeColor("#000")
+    .lineWidth(0.5)
+    .stroke();
+  pdf
+    .moveTo(a, textYaxis + d)
+    .lineTo(b, textYaxis + d)
+    .strokeColor("#000")
+    .lineWidth(0.5)
+    .stroke();
+}
+function customerTextFild(text, xPosition, yPosition) {
+  pdf
+    .font("Times-Roman")
+    .fontSize(11)
+    .fillColor("#000")
+    .text(text, xPosition, textYaxis + yPosition);
+}
+
+function buldPdf() {
   pdf.pipe(fs.createWriteStream(`output1.pdf`));
-  const fullWidth = 595.28;
-  const fullHeight = 841.89;
-  const nameAxis = 76;
-  const textYaxis = 335;
 
   pdf
     .font("Times-Bold")
@@ -49,68 +83,20 @@ function buldPdf() {
     width: 400,
   });
   //*********************left text********************** */
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Full Name : MUSTOFA KASSA BELACHEW", 60, textYaxis);
+  customerTextFild("Full Name : MUSTOFA KASSA BELACHEW", 60, 0);
+  customerTextFild("Id. No : ", 60, 15);
+  customerTextFild("Sex: ", 60, 30);
+  customerTextFild("Region: ", 60, 45);
+  customerTextFild("Woreda: ", 60, 60);
+  customerTextFild("Village/Got: ", 60, 75);
 
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Id. No : ", 60, textYaxis + 15);
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Sex: ", 60, textYaxis + 30);
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Region: ", 60, textYaxis + 45);
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Woreda: ", 60, textYaxis + 60);
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Village/Got: ", 60, textYaxis + 75);
   //**************right text********************* */
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Date of birth: 1982-01-01", 313, textYaxis);
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Passport Number: ", 313, textYaxis + 15);
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Occupation: ", 313, textYaxis + 30);
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Zone/sub-city: ", 313, textYaxis + 45);
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Kebele: ", 313, textYaxis + 60);
-  pdf
-    .font("Times-Roman")
-    .fontSize(11)
-    .fillColor("#000")
-    .text("Place of vaccination: Bole 17/20 HC", 313, textYaxis + 75);
+  customerTextFild("Date of birth: 1982-01-01", 313, 0);
+  customerTextFild("Passport Number: ", 313, 15);
+  customerTextFild("Occupation: ", 313, 30);
+  customerTextFild("Zone/sub-city: ", 313, 45);
+  customerTextFild("Kebele: ", 313, 60);
+  customerTextFild("Place of vaccination: Bole 17/20 HC", 313, 75);
 
   //*************table*************************************** */
   //**************verticals********************************** */
@@ -120,24 +106,15 @@ function buldPdf() {
     .strokeColor("#000")
     .lineWidth(0.5)
     .stroke();
-  pdf
-    .moveTo(60, textYaxis + 125)
-    .lineTo(fullWidth - 60, textYaxis + 125)
-    .strokeColor("#000")
-    .lineWidth(0.5)
-    .stroke();
-  pdf
-    .moveTo(60, textYaxis + 140)
-    .lineTo(fullWidth - 60, textYaxis + 140)
-    .strokeColor("#000")
-    .lineWidth(0.5)
-    .stroke();
-  pdf
-    .moveTo(60, textYaxis + 155)
-    .lineTo(fullWidth - 60, textYaxis + 155)
-    .strokeColor("#000")
-    .lineWidth(0.5)
-    .stroke();
+  //******************************** */
+  squer(61.5, 148.5, 111, 125);
+
+  squer(61.5, 148.5, 126, 140);
+
+  squer(61.5, 148.5, 141, 155);
+
+  squer(61.5, 148.5, 156, 169);
+
   pdf
     .moveTo(60, textYaxis + 170)
     .lineTo(fullWidth - 60, textYaxis + 170)
@@ -151,31 +128,44 @@ function buldPdf() {
     .strokeColor("#000")
     .lineWidth(0.5)
     .stroke();
-  pdf
-    .moveTo(150, textYaxis + 110)
-    .lineTo(150, textYaxis + 170)
-    .strokeColor("#000")
-    .lineWidth(0.5)
-    .stroke();
-  pdf
-    .moveTo(255, textYaxis + 110)
-    .lineTo(255, textYaxis + 170)
-    .strokeColor("#000")
-    .lineWidth(0.5)
-    .stroke();
-  pdf
-    .moveTo(345, textYaxis + 110)
-    .lineTo(345, textYaxis + 170)
-    .strokeColor("#000")
-    .lineWidth(0.5)
-    .stroke();
-  pdf
-    .moveTo(445, textYaxis + 110)
-    .lineTo(445, textYaxis + 170)
-    .strokeColor("#000")
-    .lineWidth(0.5)
-    .stroke();
 
+  //********************************** */
+  squer(150, 254.5, 111, 125);
+
+  squer(150, 254.5, 126, 140);
+
+  squer(150, 254.5, 141, 155);
+
+  squer(150, 254.5, 156, 169);
+
+  //******************************* */
+  squer(255.5, 344.5, 111, 125);
+
+  squer(255.5, 344.5, 126, 140);
+
+  squer(255.5, 344.5, 141, 155);
+
+  squer(255.5, 344.5, 156, 169);
+
+  //***************************** */
+
+  squer(345.5, 444.5, 111, 125);
+
+  squer(345.5, 444.5, 126, 140);
+
+  squer(345.5, 444.5, 141, 155);
+
+  squer(345.5, 444.5, 156, 169);
+
+  /************************ */
+  squer(445.5, 534, 111, 125);
+
+  squer(445.5, 534, 126, 140);
+
+  squer(445.5, 534, 141, 155);
+
+  squer(445.5, 534, 156, 169);
+  //************************ */
   pdf
     .moveTo(fullWidth - 60, textYaxis + 110)
     .lineTo(fullWidth - 60, textYaxis + 170)

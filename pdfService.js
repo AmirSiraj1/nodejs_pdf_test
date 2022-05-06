@@ -12,25 +12,25 @@ function squer(a, b, c, d) {
     .moveTo(a, textYaxis + c)
     .lineTo(b, textYaxis + c)
     .strokeColor("#000")
-    .lineWidth(0.5)
+    .lineWidth(0.25)
     .stroke();
   pdf
     .moveTo(a, textYaxis + c)
     .lineTo(a, textYaxis + d)
     .strokeColor("#000")
-    .lineWidth(0.5)
+    .lineWidth(0.25)
     .stroke();
   pdf
     .moveTo(b, textYaxis + c)
     .lineTo(b, textYaxis + d)
     .strokeColor("#000")
-    .lineWidth(0.5)
+    .lineWidth(0.25)
     .stroke();
   pdf
     .moveTo(a, textYaxis + d)
     .lineTo(b, textYaxis + d)
     .strokeColor("#000")
-    .lineWidth(0.5)
+    .lineWidth(0.25)
     .stroke();
 }
 function customerTextFild(text, xPosition, yPosition) {
@@ -102,9 +102,9 @@ function buldPdf() {
   //**************verticals********************************** */
   pdf
     .moveTo(60, textYaxis + 110)
-    .lineTo(fullWidth - 60, textYaxis + 110)
+    .lineTo(fullWidth - 50, textYaxis + 110)
     .strokeColor("#000")
-    .lineWidth(0.5)
+    .lineWidth(0.25)
     .stroke();
   //******************************** */
   squer(61.5, 148.5, 111, 125);
@@ -121,16 +121,16 @@ function buldPdf() {
 
   pdf
     .moveTo(60, textYaxis + 170)
-    .lineTo(fullWidth - 60, textYaxis + 170)
+    .lineTo(fullWidth - 50, textYaxis + 170)
     .strokeColor("#000")
-    .lineWidth(0.5)
+    .lineWidth(0.25)
     .stroke();
   //**************************horizontals************************* */
   pdf
     .moveTo(60, textYaxis + 110)
     .lineTo(60, textYaxis + 170)
     .strokeColor("#000")
-    .lineWidth(0.5)
+    .lineWidth(0.25)
     .stroke();
 
   //********************************** */
@@ -168,22 +168,22 @@ function buldPdf() {
   squer(345.5, 444.5, 156, 169);
 
   /************************ */
-  squer(445.5, 534, 111, 125);
+  squer(445.5, 544, 111, 125);
   customerTextFild("Next Vaccination date", 446, 114);
 
-  squer(445.5, 534, 126, 140);
+  squer(445.5, 544, 126, 140);
 
-  squer(445.5, 534, 141, 155);
+  squer(445.5, 544, 141, 155);
 
-  squer(445.5, 534, 156, 169);
+  squer(445.5, 544, 156, 169);
   //************************ */
   pdf
-    .moveTo(fullWidth - 60, textYaxis + 110)
-    .lineTo(fullWidth - 60, textYaxis + 170)
+    .moveTo(fullWidth - 50, textYaxis + 110)
+    .lineTo(fullWidth - 50, textYaxis + 170)
     .strokeColor("#000")
-    .lineWidth(0.5)
+    .lineWidth(0.25)
     .stroke();
-
+  customerTextFild("Prepared by: Helina Embibel", 60, 195);
   pdf.end();
 }
 

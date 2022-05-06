@@ -108,6 +108,7 @@ function buldPdf() {
     .stroke();
   //******************************** */
   squer(61.5, 148.5, 111, 125);
+  customerTextFild("Dose", 62, 111);
 
   squer(61.5, 148.5, 126, 140);
 

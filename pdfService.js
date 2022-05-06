@@ -82,6 +82,12 @@ function buldPdf() {
     height: 250,
     width: 400,
   });
+  //************************************************** */
+  pdf
+    .font("Times-Roman")
+    .fontSize(11)
+    .fillColor("#000")
+    .text("Demographic information", 257, textYaxis - 14);
   //*********************left text********************** */
   customerTextFild("Full Name : MUSTOFA KASSA BELACHEW", 60, 0);
   customerTextFild("Id. No : ", 60, 15);
@@ -184,6 +190,8 @@ function buldPdf() {
     .lineWidth(0.25)
     .stroke();
   customerTextFild("Prepared by: Helina Embibel", 60, 190);
+  customerTextFild("Authorized by :", 420, 190);
+  customerTextFild("Issued date: 2021-11-18", 60, 207);
   pdf.end();
 }
 

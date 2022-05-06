@@ -111,10 +111,13 @@ function buldPdf() {
   customerTextFild("Dose", 62, 114);
 
   squer(61.5, 148.5, 126, 140);
+  customerTextFild("Dose 1", 62, 129);
 
   squer(61.5, 148.5, 141, 155);
+  customerTextFild("Dose 2", 62, 144);
 
   squer(61.5, 148.5, 156, 169);
+  customerTextFild("Booster dose", 62, 159);
 
   pdf
     .moveTo(60, textYaxis + 170)

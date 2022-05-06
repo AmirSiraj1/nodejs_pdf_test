@@ -135,8 +135,10 @@ function buldPdf() {
 
   //********************************** */
   squer(150, 254.5, 111, 125);
+  customerTextFild("Vaccine type", 151, 114);
 
   squer(150, 254.5, 126, 140);
+  customerTextFild("Johnson_johnson", 151, 129);
 
   squer(150, 254.5, 141, 155);
 
@@ -144,8 +146,10 @@ function buldPdf() {
 
   //******************************* */
   squer(255.5, 344.5, 111, 125);
+  customerTextFild("Batch No.", 256, 114);
 
   squer(255.5, 344.5, 126, 140);
+  customerTextFild("209C21A", 256, 129);
 
   squer(255.5, 344.5, 141, 155);
 
@@ -154,8 +158,10 @@ function buldPdf() {
   //***************************** */
 
   squer(345.5, 444.5, 111, 125);
+  customerTextFild("Date vaccinated", 346, 114);
 
   squer(345.5, 444.5, 126, 140);
+  customerTextFild("2021-11-18", 346, 129);
 
   squer(345.5, 444.5, 141, 155);
 
@@ -163,6 +169,7 @@ function buldPdf() {
 
   /************************ */
   squer(445.5, 534, 111, 125);
+  customerTextFild("Next Vaccination date", 446, 114);
 
   squer(445.5, 534, 126, 140);
 

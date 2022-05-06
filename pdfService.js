@@ -183,7 +183,7 @@ function buldPdf() {
     .strokeColor("#000")
     .lineWidth(0.25)
     .stroke();
-  customerTextFild("Prepared by: Helina Embibel", 60, 195);
+  customerTextFild("Prepared by: Helina Embibel", 60, 190);
   pdf.end();
 }
 

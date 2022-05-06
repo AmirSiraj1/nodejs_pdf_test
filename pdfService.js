@@ -86,8 +86,8 @@ function buldPdf() {
   pdf
     .font("Times-Roman")
     .fontSize(11)
-    .fillColor("#000")
-    .text("Demographic information", 257, textYaxis - 14);
+    .fillColor("#BFCFFF")
+    .text("Demographic information", 237, textYaxis - 14);
   //*********************left text********************** */
   customerTextFild("Full Name : MUSTOFA KASSA BELACHEW", 60, 0);
   customerTextFild("Id. No : ", 60, 15);

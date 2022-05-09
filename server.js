@@ -1,5 +1,5 @@
 const express = require("express");
-const pdfService = require("./pdfService");
+const pdfService = require("./pdf-service");
 
 const app = express();
 

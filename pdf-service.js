@@ -182,9 +182,14 @@ function buldPdf() {
     .lineWidth(1)
     .stroke();
   //****************************************IMAGE************************************** */
-  pdf.image(fs.readFileSync(`${__dirname}/assets/footer.jpg`), 0, 195, {
-    height: 550,
-    width: fullWidth + 70,
+  pdf.image(fs.readFileSync(`${__dirname}/assets/imgs.png`), 0, 195, {
+    height: 140,
+    width: 230,
+  });
+
+  pdf.image(fs.readFileSync(`${__dirname}/assets/sstamp.png`), 250, 195, {
+    height: 150,
+    width: 150,
   });
   //*********************************************************************************** */
   pdf

@@ -336,10 +336,10 @@ function buldPdf() {
   pdf.font("Helvetica-Bold").fontSize(9).text(`End Of Report `, 260, 639);
 
   //****************************************IMAGE************************************** */
-  // pdf.image(fs.readFileSync(`${__dirname}/assets/imgs.png`), 0, 195, {
-  //   height: 140,
-  //   width: 230,
-  // });
+  pdf.image(fs.readFileSync(`${__dirname}/assets/segniture.png`), 10, 689, {
+    height: 120,
+    width: 230,
+  });
 
   // pdf.image(fs.readFileSync(`${__dirname}/assets/sstamp.png`), 250, 195, {
   //   height: 150,

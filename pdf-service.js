@@ -9,9 +9,9 @@ function buldPdf() {
   const fullHeight = 918.43;
   const nameAxis = 130;
 
-  pdf.image(fs.readFileSync(`${__dirname}/assets/header.jpg`), 0, 0, {
-    height: 80,
-    width: fullWidth,
+  pdf.image(fs.readFileSync(`${__dirname}/assets/MBM_logo.png`), 0, 0, {
+    height: 120,
+    width: 110,
   });
   //***************************texts*********************************************** */
   pdf

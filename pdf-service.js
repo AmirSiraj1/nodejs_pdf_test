@@ -334,38 +334,50 @@ function buldPdf() {
       { width: fullWidth - 27.5, lineGap: 0.5 }
     );
   pdf.font("Helvetica-Bold").fontSize(9).text(`End Of Report `, 260, 639);
+  pdf.font("Helvetica").fontSize(9).text(`Page 1 Of 1 `, 290, 739);
 
   //****************************************IMAGE************************************** */
   pdf.image(fs.readFileSync(`${__dirname}/assets/segniture.png`), 10, 689, {
-    height: 120,
-    width: 230,
+    height: 95,
+    width: 200,
   });
 
-  // pdf.image(fs.readFileSync(`${__dirname}/assets/sstamp.png`), 250, 195, {
-  //   height: 150,
-  //   width: 150,
-  // });
+  pdf.image(fs.readFileSync(`${__dirname}/assets/sstamp.png`), 470, 679, {
+    height: 110,
+    width: 110,
+  });
+  pdf.image(fs.readFileSync(`${__dirname}/assets/imgs.png`), 10, 827, {
+    height: 95,
+    width: 155,
+  });
   //*********************************************************************************** */
   pdf
     .fontSize(7)
     .text(
       "THIS IS A SYSTEM GENERATED REPORT AND DOES NOT REQUIRE PHYSICAL SIGNATURE",
       150,
-      749,
+      815,
       {
         width: 400,
       }
     );
   pdf
-    .font("Helvetica-Bold")
+    .font("Helvetica")
     .fontSize(8)
-    .text("Printed By:     Automatic Printing", 15, 759, {
+    .text("Printed By:     Automatic Printing", 15, 800, {
       width: 180,
+    });
+  pdf
+    .font("Helvetica")
+    .fontSize(8)
+    .text("Printed Date:     28/04/2022 20:46", 474, 800, {
+      width: 150,
     });
   pdf
     .font("Helvetica-Bold")
     .fontSize(8)
-    .text("Printed Date:     Automatic Printing", 400, 759, {
+    .fillColor("#FF0000")
+    .text("Final Report", 290, 800, {
       width: 150,
     });
   pdf

@@ -13,6 +13,11 @@ function buldPdf() {
     height: 100,
     width: 185,
   });
+  pdf.image(fs.readFileSync(`${__dirname}/assets/email.png`), 549, 10, {
+    height: 40,
+    width: 100,
+    link: "www.info@mbmlab.ae",
+  });
   //***************************texts*********************************************** */
   pdf
     .font("Helvetica-Bold")
@@ -350,8 +355,8 @@ function buldPdf() {
     height: 95,
     width: 155,
   });
-  pdf.image(fs.readFileSync(`${__dirname}/assets/email_link.png`), 400, 817, {
-    height: 85,
+  pdf.image(fs.readFileSync(`${__dirname}/assets/email_link.png`), 425, 810, {
+    height: 60,
     width: 200,
   });
   //*********************************************************************************** */
@@ -384,18 +389,16 @@ function buldPdf() {
     .text("Final Report", 290, 780, {
       width: 150,
     });
-  // pdf
-  //   .font("Helvetica-Bold")
-  //   .fontSize(8)
-  //   .text(
-  //     "Al Quoz,Industrial Area 4 - P.O Box 26148,Dubai,UAE - Tel: +971 55 538 7248-Fax: +971 4 386 9998-Email: customercaredxb@menalabs.com",
-  //     20,
-  //     fullHeight - 30,
-  //     {
-  //       width: fullWidth,
-  //     }
-  //   );
-
+  pdf
+    .font("Helvetica")
+    .fontSize(7)
+    .fillColor("red")
+    .text("TRIAL MODE - Click here for more information", 10, fullHeight - 10, {
+      link: "https://www.bullzip.com/products/pdf/trial.php?fl=&rfl=PRO&ver=12.2.2905&no=&tf=Professional%20features:%20Professional%20macro%20%3Cenv%3E%20in%20output&ref=",
+      underline: false,
+      width: 150,
+    });
+  // info@mbmlab.ae
   pdf.end();
 }
 

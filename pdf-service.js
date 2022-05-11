@@ -350,6 +350,10 @@ function buldPdf() {
     height: 95,
     width: 155,
   });
+  pdf.image(fs.readFileSync(`${__dirname}/assets/email_link.png`), 400, 817, {
+    height: 85,
+    width: 200,
+  });
   //*********************************************************************************** */
   pdf
     .fontSize(7)

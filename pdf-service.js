@@ -361,10 +361,20 @@ function buldPdf() {
   pdf.font("Helvetica").fontSize(9).text(`Page 1 Of 1 `, 290, 729);
 
   //****************************************IMAGE************************************** */
-  pdf.image(fs.readFileSync(`${__dirname}/assets/segniture.png`), 10, 669, {
-    height: 95,
-    width: 200,
+  pdf.image(fs.readFileSync(`${__dirname}/assets/segniture1.png`), 60, 669, {
+    height: 53,
+    width: 80,
   });
+  pdf
+    .font("Helvetica-Bold")
+    .fontSize(9)
+    .text(`Dr. Shini Raj Anandan `, 10, 722);
+  pdf
+    .font("Helvetica-Bold")
+    .fontSize(9)
+    .text(`Physician Specialist Medical Microbiologist,  `, 10, 734);
+  pdf.font("Helvetica-Bold").fontSize(9).text(`Laboratory Director  `, 10, 746);
+  pdf.font("Helvetica-Bold").fontSize(9).text(`77233923-001  `, 10, 758);
 
   pdf.image(fs.readFileSync(`${__dirname}/assets/sstamp.png`), 470, 659, {
     height: 110,
@@ -374,7 +384,7 @@ function buldPdf() {
     height: 95,
     width: 155,
   });
-  pdf.image(fs.readFileSync(`${__dirname}/assets/email_link.png`), 425, 810, {
+  pdf.image(fs.readFileSync(`${__dirname}/assets/email_link1.png`), 425, 810, {
     height: 60,
     width: 200,
   });

@@ -8,5 +8,5 @@ app.listen(8080, () => {
 });
 
 app.get("/", (res, req) => {
-  pdfService.buldPdf();
+  pdfService.buldQr();
 });

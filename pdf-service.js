@@ -1,6 +1,21 @@
 const PDFDocument = require("pdfkit");
 const fs = require("fs");
+const qrCode = require("qrcode");
 
+function buldQr() {
+  qrCode.toFile(
+    `${__dirname}/assets/rqimage.png`,
+    "Some text",
+    {
+      version: 5,
+      width: 90,
+    },
+    function (err) {
+      if (err) throw err;
+      buldPdf();
+    }
+  );
+}
 function buldPdf() {
   const pdf = new PDFDocument({ size: "C4", margin: 0 });
 
@@ -9,6 +24,10 @@ function buldPdf() {
   const fullHeight = 918.43;
   const nameAxis = 120;
 
+  pdf.image(fs.readFileSync(`${__dirname}/assets/rqimage.png`), 400, 20, {
+    height: 90,
+    width: 90,
+  });
   pdf.image(fs.readFileSync(`${__dirname}/assets/MBM_logo1.png`), 4, 0, {
     height: 100,
     width: 185,
@@ -402,4 +421,4 @@ function buldPdf() {
   pdf.end();
 }
 
-module.exports = { buldPdf };
+module.exports = { buldQr };

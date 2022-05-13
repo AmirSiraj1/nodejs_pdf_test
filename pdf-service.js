@@ -23,6 +23,12 @@ function buldPdf() {
   const fullWidth = 649.13;
   const fullHeight = 918.43;
   const nameAxis = 120;
+  pdf
+    .image(fs.readFileSync(`${__dirname}/assets/MBM_logo3.png`), 0, 60, {
+      width: pdf.page.width,
+      height: 670,
+    })
+    .fillOpacity(1);
 
   pdf.image(fs.readFileSync(`${__dirname}/assets/rqimage.png`), 400, 20, {
     height: 90,
@@ -427,6 +433,12 @@ function buldPdf() {
       underline: false,
       width: 150,
     });
+  // pdf
+  //   .image(fs.readFileSync(`${__dirname}/assets/MBM_logo1.png`), 0, 0, {
+  //     width: pdf.page.width,
+  //     height: pdf.page.height,
+  //   })
+  //   .opacity(10);
   // info@mbmlab.ae
   pdf.end();
 }

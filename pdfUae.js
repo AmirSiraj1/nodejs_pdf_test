@@ -292,6 +292,118 @@ function buldPdf() {
     .text(`Please repeat the test in 72-96 hours for confirmation`, 36, 360, {
       wordSpacing: 0.25,
     });
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `- A false negative result with clinical symptoms may be caused by unsuitable collection, handling, or storage of samples. It may also be caused by`,
+      36,
+      380,
+      {
+        wordSpacing: 0.25,
+      }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `a sample outside of the viremic phase, or by the presence of PCR inhibitors in the specimen. We recommend repeating the test on a fresh sample`,
+      36,
+      390,
+      {
+        wordSpacing: 0.25,
+      }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(`if symptoms are present`, 36, 400, {
+      wordSpacing: 0.25,
+    });
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(`Limitations of the test:`, 36, 420, {
+      wordSpacing: 0.25,
+    });
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `1. This assay has been validated for use with an oropharyngeal swab and nasopharyngeal swab samples only`,
+      36,
+      440,
+      {
+        wordSpacing: 0.25,
+      }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(`2. This assay only detects ORF1AB and N gene.`, 36, 450, {
+      wordSpacing: 0.25,
+    });
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `3. If the virus mutates in the rRT-PCR target region, 2019-nCoV may not be detected or may be detected less predictably. Inhibitors or other types`,
+      36,
+      460,
+      {
+        wordSpacing: 0.25,
+      }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(`of interference may produce a false negative result`, 36, 470, {
+      wordSpacing: 0.25,
+    });
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `4. This test cannot rule out diseases caused by other bacterial or viral pathogens`,
+      36,
+      480,
+      {
+        wordSpacing: 0.25,
+      }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `5. As all diagnostic tests, a definitive clinical diagnosis should not be based on the result of a single test but should only be made after all clinical`,
+      36,
+      490,
+      {
+        wordSpacing: 0.25,
+      }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `and laboratory findings have been evaluated. Collection of multiple specimens from the same patient may be necessary to detect the virus.`,
+      36,
+      500,
+      {
+        wordSpacing: 0.25,
+      }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `This certificate has been issued electronically by MenaLabs. Any party that relies on the result of this certificate should first check its authenticity`,
+      36,
+      530,
+      {
+        wordSpacing: 0.25,
+      }
+    );
 
   //*********************************************************************************** */
   pdf

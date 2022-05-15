@@ -1,12 +1,12 @@
 const PDFDocument = require("pdfkit");
 const fs = require("fs");
 
-function buldPdf(data) {
-  const pdf = new PDFDocument({ size: "A4", margin: 0 });
+function buldPdf() {
+  const pdf = new PDFDocument({ size: "SRA4", margin: 0 });
 
   pdf.pipe(fs.createWriteStream(`output1.pdf`));
-  const fullWidth = 533.28;
-  const fullHeight = 841.89;
+  const fullWidth = 637.8;
+  const fullHeight = 907.09;
   const nameAxis = 76;
 
   pdf.image(fs.readFileSync(`${__dirname}/assets/header.jpg`), 0, 0, {
@@ -104,80 +104,80 @@ function buldPdf(data) {
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Lab ID", 330, nameAxis);
+    .text("Lab ID", 360, nameAxis);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Sample No", 330, nameAxis + 17);
+    .text("Sample No", 360, nameAxis + 17);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Emirates ID", 330, nameAxis + 34);
+    .text("Emirates ID", 360, nameAxis + 34);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Passport No.", 330, nameAxis + 51);
+    .text("Passport No.", 360, nameAxis + 51);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Reg. Date", 330, nameAxis + 68);
+    .text("Reg. Date", 360, nameAxis + 68);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Collection Date", 330, nameAxis + 85);
+    .text("Collection Date", 360, nameAxis + 85);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Reporting Date", 330, nameAxis + 102);
+    .text("Reporting Date", 360, nameAxis + 102);
 
   //****************************************************************************** */
-  pdf.font("Helvetica").fontSize(12).text(":  2806351", 430, nameAxis, {
+  pdf.font("Helvetica").fontSize(12).text(":  2806351", 460, nameAxis, {
     width: 180,
   });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: Sample Id`, 430, nameAxis + 17, {
+    .text(`: Sample Id`, 460, nameAxis + 17, {
       //${data.sampleId}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(": ", 430, nameAxis + 34, {
+    .text(": ", 460, nameAxis + 34, {
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: `, 430, nameAxis + 51, {
+    .text(`: `, 460, nameAxis + 51, {
       //${data.passportNum}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: 2020/12/03`, 430, nameAxis + 68, {
+    .text(`: 2020/12/03`, 460, nameAxis + 68, {
       //${data.requestedDate}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: collected date`, 430, nameAxis + 85, {
+    .text(`: collected date`, 460, nameAxis + 85, {
       //${data.collectedDate}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: result date`, 430, nameAxis + 102, {
+    .text(`: result date`, 460, nameAxis + 102, {
       //${data.resultDate}
       width: 180,
     });
@@ -185,7 +185,7 @@ function buldPdf(data) {
   //**************LINE*************************************************************** */
   pdf
     .moveTo(12, 195 - 4)
-    .lineTo(570, 195 - 4)
+    .lineTo(fullWidth - 40, 195 - 4)
     .strokeColor("#000")
     .lineWidth(1)
     .stroke();
@@ -195,7 +195,7 @@ function buldPdf(data) {
   //     width: fullWidth + 70,
   //   });
   //*************************center Text******************************************** */
-  pdf.font("Helvetica-Bold").fontSize(14).text(`Molecular Biology`, 240, 195, {
+  pdf.font("Helvetica-Bold").fontSize(14).text(`Molecular Biology`, 270, 195, {
     width: 180,
     underline: true,
   });
@@ -203,14 +203,14 @@ function buldPdf(data) {
   //*********************square**************************************************** */
   pdf
     .moveTo(12, 213)
-    .lineTo(570, 213)
+    .lineTo(fullWidth - 36, 213)
     .strokeColor("#000")
     .lineWidth(0.5)
     .stroke();
 
   pdf
     .moveTo(12, 232)
-    .lineTo(570, 232)
+    .lineTo(fullWidth - 36, 232)
     .strokeColor("#000")
     .lineWidth(1.2)
     .stroke();
@@ -221,22 +221,78 @@ function buldPdf(data) {
     .lineWidth(0.5)
     .stroke();
   pdf
-    .moveTo(570, 213)
-    .lineTo(570, 593)
+    .moveTo(fullWidth - 36, 213)
+    .lineTo(fullWidth - 36, 593)
     .strokeColor("#000")
     .lineWidth(0.5)
     .stroke();
   pdf
     .moveTo(12, 593)
-    .lineTo(570, 593)
+    .lineTo(fullWidth - 36, 593)
     .strokeColor("#000")
     .lineWidth(0.5)
     .stroke();
   //***********************text************************************************** */
   pdf.font("Helvetica-Bold").fontSize(10).text(`Test`, 28, 217);
   pdf.font("Helvetica-Bold").fontSize(10).text(`Result`, 192, 217);
-  pdf.font("Helvetica-Bold").fontSize(10).text(`Reference Range`, 370, 217);
-  pdf.font("Helvetica-Bold").fontSize(10).text(`Methodology`, 493, 217);
+  pdf.font("Helvetica-Bold").fontSize(10).text(`Methodology`, 450, 217);
+  //*******************************************Text********************** */
+  pdf.font("Helvetica-Bold").fontSize(11).text(`COVID-19 by RT-PCR *`, 28, 245);
+  pdf
+    .font("Helvetica-Bold")
+    .fontSize(11)
+    .text(`Not Detected (Negative)`, 192, 245);
+  pdf.font("Helvetica").fontSize(10).text(`Multiplex Real Time PCR`, 450, 245);
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(9)
+    .text(
+      `Specimen: Nasopharyngeal swab / Oropharyngeal Swab / Saliva `,
+      38,
+      260
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(9)
+    .text(`Interpretation of the result:- `, 38, 280);
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `**Detected:DETECTED indicates that SARS-CoV-2 RNA is present in this specimen.Results should be interpreted in the context of all available lab`,
+      36,
+      300,
+      { wordSpacing: 0.25 }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(`and clinical findings`, 36, 310, { wordSpacing: 0.25 });
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `** Not Detected: If the result is NOT DETECTED, that means the sample is negative for SARS-CoV-2/Covid-19`,
+      36,
+      330,
+      { wordSpacing: 0.25 }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `** Presumptive positive: Only one of the multiple genes is detected or a low viral load is possible, this indicates that you may have the virus.`,
+      36,
+      350,
+      { wordSpacing: 0.25 }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(`Please repeat the test in 72-96 hours for confirmation`, 36, 360, {
+      wordSpacing: 0.25,
+    });
+
   //*********************************************************************************** */
   pdf
     .fontSize(7)

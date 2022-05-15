@@ -104,80 +104,80 @@ function buldPdf(data) {
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Lab ID", 300, nameAxis);
+    .text("Lab ID", 330, nameAxis);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Sample No", 300, nameAxis + 17);
+    .text("Sample No", 330, nameAxis + 17);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Emirates ID", 300, nameAxis + 34);
+    .text("Emirates ID", 330, nameAxis + 34);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Passport No.", 300, nameAxis + 51);
+    .text("Passport No.", 330, nameAxis + 51);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Reg. Date", 300, nameAxis + 68);
+    .text("Reg. Date", 330, nameAxis + 68);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Collection Date", 300, nameAxis + 85);
+    .text("Collection Date", 330, nameAxis + 85);
   pdf
     .font("Helvetica-Bold")
     .fontSize(9)
     .fillColor("#000")
-    .text("Reporting Date", 300, nameAxis + 102);
+    .text("Reporting Date", 330, nameAxis + 102);
 
   //****************************************************************************** */
-  pdf.font("Helvetica").fontSize(12).text(":  2806351", 400, nameAxis, {
+  pdf.font("Helvetica").fontSize(12).text(":  2806351", 430, nameAxis, {
     width: 180,
   });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: Sample Id`, 400, nameAxis + 17, {
+    .text(`: Sample Id`, 430, nameAxis + 17, {
       //${data.sampleId}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(": ", 400, nameAxis + 34, {
+    .text(": ", 430, nameAxis + 34, {
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: `, 400, nameAxis + 51, {
+    .text(`: `, 430, nameAxis + 51, {
       //${data.passportNum}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: 2020/12/03`, 400, nameAxis + 68, {
+    .text(`: 2020/12/03`, 430, nameAxis + 68, {
       //${data.requestedDate}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: collected date`, 400, nameAxis + 85, {
+    .text(`: collected date`, 430, nameAxis + 85, {
       //${data.collectedDate}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: result date`, 400, nameAxis + 102, {
+    .text(`: result date`, 430, nameAxis + 102, {
       //${data.resultDate}
       width: 180,
     });
@@ -195,40 +195,40 @@ function buldPdf(data) {
   //     width: fullWidth + 70,
   //   });
   //*************************center Text******************************************** */
-  pdf.font("Helvetica-Bold").fontSize(15).text(`Molecular Biology`, 240, 242, {
+  pdf.font("Helvetica-Bold").fontSize(14).text(`Molecular Biology`, 240, 195, {
     width: 180,
     underline: true,
   });
 
   //*********************square**************************************************** */
   pdf
-    .moveTo(12, 260)
-    .lineTo(fullWidth - 12, 260)
+    .moveTo(12, 213)
+    .lineTo(570, 213)
     .strokeColor("#000")
     .lineWidth(0.5)
     .stroke();
 
   pdf
-    .moveTo(12, 279)
-    .lineTo(fullWidth - 12, 279)
+    .moveTo(12, 232)
+    .lineTo(570, 232)
     .strokeColor("#000")
     .lineWidth(1.2)
     .stroke();
   pdf
-    .moveTo(12, 260)
-    .lineTo(12, 640)
+    .moveTo(12, 213)
+    .lineTo(12, 593)
     .strokeColor("#000")
     .lineWidth(0.5)
     .stroke();
   pdf
-    .moveTo(fullWidth - 12, 260)
-    .lineTo(fullWidth - 12, 640)
+    .moveTo(570, 213)
+    .lineTo(570, 593)
     .strokeColor("#000")
     .lineWidth(0.5)
     .stroke();
   pdf
-    .moveTo(12, 640)
-    .lineTo(fullWidth - 12, 640)
+    .moveTo(12, 593)
+    .lineTo(570, 593)
     .strokeColor("#000")
     .lineWidth(0.5)
     .stroke();

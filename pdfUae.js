@@ -232,6 +232,11 @@ function buldPdf(data) {
     .strokeColor("#000")
     .lineWidth(0.5)
     .stroke();
+  //***********************text************************************************** */
+  pdf.font("Helvetica-Bold").fontSize(10).text(`Test`, 28, 217);
+  pdf.font("Helvetica-Bold").fontSize(10).text(`Result`, 192, 217);
+  pdf.font("Helvetica-Bold").fontSize(10).text(`Reference Range`, 370, 217);
+  pdf.font("Helvetica-Bold").fontSize(10).text(`Methodology`, 493, 217);
   //*********************************************************************************** */
   pdf
     .fontSize(7)

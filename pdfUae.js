@@ -190,10 +190,48 @@ function buldPdf(data) {
     .lineWidth(1)
     .stroke();
   //****************************************IMAGE************************************** */
-  pdf.image(fs.readFileSync(`${__dirname}/assets/footer.jpg`), 0, 195, {
-    height: 550,
-    width: fullWidth + 70,
+  //   pdf.image(fs.readFileSync(`${__dirname}/assets/footer.jpg`), 0, 195, {
+  //     height: 550,
+  //     width: fullWidth + 70,
+  //   });
+  //*************************center Text******************************************** */
+  pdf.font("Helvetica-Bold").fontSize(15).text(`Molecular Biology`, 240, 242, {
+    width: 180,
+    underline: true,
   });
+
+  //*********************square**************************************************** */
+  pdf
+    .moveTo(12, 260)
+    .lineTo(fullWidth - 12, 260)
+    .strokeColor("#000")
+    .lineWidth(0.5)
+    .stroke();
+
+  pdf
+    .moveTo(12, 279)
+    .lineTo(fullWidth - 12, 279)
+    .strokeColor("#000")
+    .lineWidth(1.2)
+    .stroke();
+  pdf
+    .moveTo(12, 260)
+    .lineTo(12, 640)
+    .strokeColor("#000")
+    .lineWidth(0.5)
+    .stroke();
+  pdf
+    .moveTo(fullWidth - 12, 260)
+    .lineTo(fullWidth - 12, 640)
+    .strokeColor("#000")
+    .lineWidth(0.5)
+    .stroke();
+  pdf
+    .moveTo(12, 640)
+    .lineTo(fullWidth - 12, 640)
+    .strokeColor("#000")
+    .lineWidth(0.5)
+    .stroke();
   //*********************************************************************************** */
   pdf
     .fontSize(7)

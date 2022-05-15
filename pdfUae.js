@@ -57,7 +57,8 @@ function buldPdf(data) {
     .text("Ref. By Dr.", 17, nameAxis + 102);
 
   //************************************************************************ */
-  pdf.font("Helvetica").fontSize(12).text(`:  ${data.fullName}`, 90, nameAxis, {
+  //   ${data.fullName}
+  pdf.font("Helvetica").fontSize(12).text(`:  Amir Siraj Ali`, 90, nameAxis, {
     width: 180,
   });
   pdf
@@ -75,13 +76,15 @@ function buldPdf(data) {
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`:  ${data.sex}`, 90, nameAxis + 51, {
+    .text(`:  Male`, 90, nameAxis + 51, {
+      //${data.sex}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`:  ${data.dbo}`, 90, nameAxis + 68, {
+    .text(`:  dbo`, 90, nameAxis + 68, {
+      //${data.dbo}
       width: 180,
     });
   pdf
@@ -140,7 +143,8 @@ function buldPdf(data) {
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: ${data.sampleId}`, 400, nameAxis + 17, {
+    .text(`: Sample Id`, 400, nameAxis + 17, {
+      //${data.sampleId}
       width: 180,
     });
   pdf
@@ -152,25 +156,29 @@ function buldPdf(data) {
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: ${data.passportNum}`, 400, nameAxis + 51, {
+    .text(`: `, 400, nameAxis + 51, {
+      //${data.passportNum}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: ${data.requestedDate}`, 400, nameAxis + 68, {
+    .text(`: 2020/12/03`, 400, nameAxis + 68, {
+      //${data.requestedDate}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: ${data.collectedDate}`, 400, nameAxis + 85, {
+    .text(`: collected date`, 400, nameAxis + 85, {
+      //${data.collectedDate}
       width: 180,
     });
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`: ${data.resultDate}`, 400, nameAxis + 102, {
+    .text(`: result date`, 400, nameAxis + 102, {
+      //${data.resultDate}
       width: 180,
     });
 

@@ -199,6 +199,7 @@ function buldPdf() {
     width: 180,
     underline: true,
   });
+  pdf.font("Helvetica-Bold").fontSize(9).text(`End Of Report`, 270, 585);
 
   //*********************square**************************************************** */
   pdf
@@ -399,7 +400,18 @@ function buldPdf() {
     .text(
       `This certificate has been issued electronically by MenaLabs. Any party that relies on the result of this certificate should first check its authenticity`,
       36,
-      530,
+      540,
+      {
+        wordSpacing: 0.25,
+      }
+    );
+  pdf
+    .font("Helvetica-Oblique")
+    .fontSize(8.5)
+    .text(
+      `by scanning the above QR code or contacting MenaLabs. MenaLabs is not responsible for any misuse of this certificate or its contents.`,
+      36,
+      550,
       {
         wordSpacing: 0.25,
       }

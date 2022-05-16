@@ -417,29 +417,41 @@ function buldPdf() {
       }
     );
 
+  //**********************************************IMAGES************************* */
+  pdf.image(fs.readFileSync(`${__dirname}/assets/segniture2.png`), 17, 660, {
+    height: 76,
+    width: 160,
+  });
+  pdf.image(fs.readFileSync(`${__dirname}/assets/stamp1.png`), 240, 620, {
+    height: 97,
+    width: 97,
+  });
+
   //*********************************************************************************** */
-  pdf
-    .fontSize(7)
-    .text(
-      "THIS IS A SYSTEM GENERATED REPORT AND DOES NOT REQUIRE PHYSICAL SIGNATURE",
-      150,
-      749,
-      {
-        width: 400,
-      }
-    );
-  pdf
-    .font("Helvetica-Bold")
-    .fontSize(8)
-    .text("Printed By:     Automatic Printing", 15, 759, {
-      width: 180,
-    });
-  pdf
-    .font("Helvetica-Bold")
-    .fontSize(8)
-    .text("Printed Date:     Automatic Printing", 400, 759, {
-      width: 150,
-    });
+
+  // pdf
+  //   .fontSize(7)
+  //   .text(
+  //     "THIS IS A SYSTEM GENERATED REPORT AND DOES NOT REQUIRE PHYSICAL SIGNATURE",
+  //     150,
+  //     749,
+  //     {
+  //       width: 400,
+  //     }
+  //   );
+  // pdf
+  //   .font("Helvetica-Bold")
+  //   .fontSize(8)
+  //   .text("Printed By:     Automatic Printing", 15, 759, {
+  //     width: 180,
+  //   });
+
+  // pdf
+  //   .font("Helvetica-Bold")
+  //   .fontSize(8)
+  //   .text("Printed Date:     Automatic Printing", 400, 759, {
+  //     width: 150,
+  //   });
   pdf
     .font("Helvetica-Bold")
     .fontSize(8)

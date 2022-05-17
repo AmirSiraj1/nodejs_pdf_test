@@ -5,7 +5,7 @@ const qrCode = require("qrcode");
 function buldQr() {
   qrCode.toFile(
     `${__dirname}/assets/rqimage.png`,
-    "Some text",
+    "Some text other text",
     {
       version: 5,
       width: 90,
@@ -25,14 +25,13 @@ function buldPdf() {
   const fullHeight = 907.09;
   const nameAxis = 76;
 
-  pdf.image(fs.readFileSync(`${__dirname}/assets/rqimage.png`), 400, 20, {
-    height: 90,
-    width: 90,
-  });
-
   pdf.image(fs.readFileSync(`${__dirname}/assets/header.jpg`), 0, 0, {
     height: 80,
     width: fullWidth,
+  });
+  pdf.image(fs.readFileSync(`${__dirname}/assets/rqimage.png`), 520, 0, {
+    height: 100,
+    width: 100,
   });
   //***************************texts*********************************************** */
   pdf

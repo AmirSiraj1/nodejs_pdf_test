@@ -200,6 +200,11 @@ function buldPdf() {
     underline: true,
   });
   pdf.font("Helvetica-Bold").fontSize(9).text(`End Of Report`, 270, 585);
+  pdf
+    .fillColor("red")
+    .font("Helvetica-Bold")
+    .fontSize(9)
+    .text(`Final Report`, 270, 696);
 
   //*********************square**************************************************** */
   pdf

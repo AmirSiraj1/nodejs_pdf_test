@@ -422,13 +422,13 @@ function buldPdf() {
     height: 76,
     width: 160,
   });
-  pdf.image(fs.readFileSync(`${__dirname}/assets/stamp1.png`), 240, 620, {
+  pdf.image(fs.readFileSync(`${__dirname}/assets/stamp1.png`), 220, 610, {
     height: 97,
     width: 97,
   });
-  pdf.image(fs.readFileSync(`${__dirname}/assets/stamp3.png`), 300, 660, {
-    height: 76,
-    width: 160,
+  pdf.image(fs.readFileSync(`${__dirname}/assets/stamp2.png`), 390, 660, {
+    height: 72,
+    width: 190,
   });
 
   //*********************************************************************************** */

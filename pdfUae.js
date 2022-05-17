@@ -200,11 +200,6 @@ function buldPdf() {
     underline: true,
   });
   pdf.font("Helvetica-Bold").fontSize(9).text(`End Of Report`, 270, 585);
-  pdf
-    .fillColor("red")
-    .font("Helvetica-Bold")
-    .fontSize(9)
-    .text(`Final Report`, 270, 696);
 
   //*********************square**************************************************** */
   pdf
@@ -423,7 +418,7 @@ function buldPdf() {
     );
 
   //**********************************************IMAGES************************* */
-  pdf.image(fs.readFileSync(`${__dirname}/assets/segniture2.png`), 17, 660, {
+  pdf.image(fs.readFileSync(`${__dirname}/assets/segniture2.png`), 17, 670, {
     height: 76,
     width: 160,
   });
@@ -431,43 +426,54 @@ function buldPdf() {
     height: 97,
     width: 97,
   });
-  pdf.image(fs.readFileSync(`${__dirname}/assets/stamp2.png`), 390, 660, {
+  pdf.image(fs.readFileSync(`${__dirname}/assets/stamp2.png`), 395, 673, {
     height: 72,
     width: 190,
   });
 
   //*********************************************************************************** */
-
-  // pdf
-  //   .fontSize(7)
-  //   .text(
-  //     "THIS IS A SYSTEM GENERATED REPORT AND DOES NOT REQUIRE PHYSICAL SIGNATURE",
-  //     150,
-  //     749,
-  //     {
-  //       width: 400,
-  //     }
-  //   );
-  // pdf
-  //   .font("Helvetica-Bold")
-  //   .fontSize(8)
-  //   .text("Printed By:     Automatic Printing", 15, 759, {
-  //     width: 180,
-  //   });
-
-  // pdf
-  //   .font("Helvetica-Bold")
-  //   .fontSize(8)
-  //   .text("Printed Date:     Automatic Printing", 400, 759, {
-  //     width: 150,
-  //   });
   pdf
     .font("Helvetica-Bold")
+    .fontSize(9)
+    .fillColor("red")
+    .text(`Final Report`, 280, 725);
+  pdf
+    .font("Helvetica-Bold")
+    .fontSize(9)
+    .fillColor("black")
+    .text(`Sample Type :   Nasopharyngeal`, 20, 784);
+  pdf.font("Helvetica").fontSize(9).text(`page 1 of 1`, 280, 780);
+
+  pdf
     .fontSize(8)
+    .text(
+      "THIS IS A SYSTEM GENERATED REPORT AND DOES NOT REQUIRE PHYSICAL SIGNATURE",
+      157,
+      800,
+      {
+        width: 400,
+      }
+    );
+  pdf
+    .font("Helvetica-Bold")
+    .fontSize(9)
+    .text("Printed By:     Automatic Printing", 20, 811, {
+      width: 180,
+    });
+
+  pdf
+    .font("Helvetica-Bold")
+    .fontSize(9)
+    .text("Printed Date:     12/30/12", 470, 811, {
+      width: 150,
+    });
+  pdf
+    .font("Helvetica-Bold")
+    .fontSize(9)
     .text(
       "Al Quoz,Industrial Area 4 - P.O Box 26148,Dubai,UAE - Tel: +971 55 538 7248-Fax: +971 4 386 9998-Email: customercaredxb@menalabs.com",
       20,
-      fullHeight - 20,
+      850,
       {
         width: fullWidth,
       }

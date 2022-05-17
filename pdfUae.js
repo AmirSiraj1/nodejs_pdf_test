@@ -426,6 +426,10 @@ function buldPdf() {
     height: 97,
     width: 97,
   });
+  pdf.image(fs.readFileSync(`${__dirname}/assets/stamp3.png`), 300, 660, {
+    height: 76,
+    width: 160,
+  });
 
   //*********************************************************************************** */
 

@@ -503,4 +503,4 @@ function buldPdf() {
   pdf.end();
 }
 
-module.exports = { buldPdf };
+module.exports = { buldQr };

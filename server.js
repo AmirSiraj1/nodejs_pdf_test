@@ -1,5 +1,5 @@
 const express = require("express");
-const pdfService = require("./pdfUae");
+const pdfService = require("./pdf-cheker");
 
 const app = express();
 
@@ -8,5 +8,5 @@ app.listen(8080, () => {
 });
 
 app.get("/", (res, req) => {
-  pdfService.buldQr();
+  pdfService.buldPdf();
 });

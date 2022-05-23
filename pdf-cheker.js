@@ -1,7 +1,7 @@
 const PDFDocument = require("pdfkit");
 const fs = require("fs");
 
-const pdf = new PDFDocument({ size: "A4", margin: 10 });
+const pdf = new PDFDocument({ size: "A5", margin: 10 });
 const fullWidth = 595.28;
 const fullHeight = 841.89;
 const nameAxis = 76;
@@ -78,10 +78,10 @@ function buldPdf() {
     .lineWidth(4)
     .stroke();
   //********************************image****************** */
-  pdf.image(fs.readFileSync(`${__dirname}/assets/head.jpg`), 100, 40, {
-    height: 250,
-    width: 400,
-  });
+  //   pdf.image(fs.readFileSync(`${__dirname}/assets/head.jpg`), 100, 40, {
+  //     height: 250,
+  //     width: 400,
+  //   });
   //************************************************** */
   pdf
     .font("Times-Roman")
@@ -104,85 +104,6 @@ function buldPdf() {
   customerTextFild("Kebele: ", 313, 60);
   customerTextFild("Place of vaccination: Bole 17/20 HC", 313, 75);
 
-  //*************table*************************************** */
-  //   //**************verticals********************************** */
-  //   pdf
-  //     .moveTo(60, textYaxis + 110)
-  //     .lineTo(fullWidth - 50, textYaxis + 110)
-  //     .strokeColor("#000")
-  //     .lineWidth(0.25)
-  //     .stroke();
-  //   //******************************** */
-  //   squer(61.5, 148.5, 111, 125);
-  //   customerTextFild("Dose", 62, 114);
-
-  //   squer(61.5, 148.5, 126, 140);
-  //   customerTextFild("Dose 1", 62, 129);
-
-  //   squer(61.5, 148.5, 141, 155);
-  //   customerTextFild("Dose 2", 62, 144);
-
-  //   squer(61.5, 148.5, 156, 169);
-  //   customerTextFild("Booster dose", 62, 159);
-
-  //   pdf
-  //     .moveTo(60, textYaxis + 170)
-  //     .lineTo(fullWidth - 50, textYaxis + 170)
-  //     .strokeColor("#000")
-  //     .lineWidth(0.25)
-  //     .stroke();
-  //   //**************************horizontals************************* */
-  //   pdf
-  //     .moveTo(60, textYaxis + 110)
-  //     .lineTo(60, textYaxis + 170)
-  //     .strokeColor("#000")
-  //     .lineWidth(0.25)
-  //     .stroke();
-
-  //   //********************************** */
-  //   squer(150, 254.5, 111, 125);
-  //   customerTextFild("Vaccine type", 151, 114);
-
-  //   squer(150, 254.5, 126, 140);
-  //   customerTextFild("Johnson_johnson", 151, 129);
-
-  //   squer(150, 254.5, 141, 155);
-
-  //   squer(150, 254.5, 156, 169);
-
-  //   //******************************* */
-  //   squer(255.5, 344.5, 111, 125);
-  //   customerTextFild("Batch No.", 256, 114);
-
-  //   squer(255.5, 344.5, 126, 140);
-  //   customerTextFild("209C21A", 256, 129);
-
-  //   squer(255.5, 344.5, 141, 155);
-
-  //   squer(255.5, 344.5, 156, 169);
-
-  //   //***************************** */
-
-  //   squer(345.5, 444.5, 111, 125);
-  //   customerTextFild("Date vaccinated", 346, 114);
-
-  //   squer(345.5, 444.5, 126, 140);
-  //   customerTextFild("2021-11-18", 346, 129);
-
-  //   squer(345.5, 444.5, 141, 155);
-
-  //   squer(345.5, 444.5, 156, 169);
-
-  //   /************************ */
-  //   squer(445.5, 544, 111, 125);
-  //   customerTextFild("Next Vaccination date", 446, 114);
-
-  //   squer(445.5, 544, 126, 140);
-
-  //   squer(445.5, 544, 141, 155);
-
-  //   squer(445.5, 544, 156, 169);
-  //   //************************ */
   pdf
     .moveTo(fullWidth - 50, textYaxis + 110)
     .lineTo(fullWidth - 50, textYaxis + 170)

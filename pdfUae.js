@@ -167,7 +167,7 @@ function buldPdf() {
     .text("Reporting Date", 360, nameAxis + 120);
 
   //****************************************************************************** */
-  pdf.font("Helvetica").fontSize(12).text(":  28063511", 460, nameAxis, {
+  pdf.font("Helvetica").fontSize(12).text(": 28063511", 460, nameAxis, {
     width: 180,
     characterSpacing: 0.5,
   });
@@ -198,7 +198,7 @@ function buldPdf() {
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`:  12-03-2022 17:31:24`, 460, nameAxis + 80, {
+    .text(`: 12-03-2022 17:31:24`, 460, nameAxis + 80, {
       //${data.requestedDate}
       width: 180,
       characterSpacing: 0.5,
@@ -206,7 +206,7 @@ function buldPdf() {
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`:  12-03-2022 17:31:24`, 460, nameAxis + 100, {
+    .text(`: 12-03-2022 17:31:24`, 460, nameAxis + 100, {
       //${data.collectedDate}
       width: 180,
       characterSpacing: 0.5,
@@ -214,7 +214,7 @@ function buldPdf() {
   pdf
     .font("Helvetica")
     .fontSize(12)
-    .text(`:  12-03-2022 17:31:24`, 460, nameAxis + 120, {
+    .text(`: 12-03-2022 17:31:24`, 460, nameAxis + 120, {
       //${data.resultDate}
       width: 180,
       characterSpacing: 0.5,

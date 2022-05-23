@@ -50,30 +50,20 @@ function buldPdf() {
     .fillColor("#000")
     .text("1/18/21, 5:20 PM", 25, 20);
   //***********************first vertical line ----******** */
-  pdf
-    .moveTo(30, 36)
-    .lineTo(fullWidth - 28, 36)
-    .strokeColor("#000")
-    .lineWidth(4)
-    .stroke();
+  pdf.moveTo(30, 36).lineTo(100, 36).strokeColor("#000").lineWidth(4).stroke();
   //****************first horizontal line |************ */
-  pdf
-    .moveTo(30, 34)
-    .lineTo(30, fullHeight - 28)
-    .strokeColor("#000")
-    .lineWidth(4)
-    .stroke();
+  pdf.moveTo(30, 34).lineTo(30, 400).strokeColor("#000").lineWidth(4).stroke();
   //**************second vertical line ---********************* */
   pdf
-    .moveTo(30, fullHeight - 30)
-    .lineTo(fullWidth - 28, fullHeight - 28)
+    .moveTo(30, 400)
+    .lineTo(400, 400)
     .strokeColor("#000")
     .lineWidth(4)
     .stroke();
   //********************second vertical line***************  */
   pdf
-    .moveTo(fullWidth - 30, 36)
-    .lineTo(fullWidth - 30, fullHeight - 30)
+    .moveTo(100, 36)
+    .lineTo(100, 400)
     .strokeColor("#000")
     .lineWidth(4)
     .stroke();

@@ -23,7 +23,7 @@ function buldPdf() {
   pdf.pipe(fs.createWriteStream(`output1.pdf`));
   const fullWidth = 637.8;
   const fullHeight = 907.09;
-  const nameAxis = 76;
+  const nameAxis = 85; //76
 
   pdf.image(fs.readFileSync(`${__dirname}/assets/header.jpg`), 0, 0, {
     height: 80,
